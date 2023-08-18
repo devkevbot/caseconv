@@ -1,4 +1,4 @@
-package main
+package caseconv
 
 import "testing"
 
@@ -21,7 +21,7 @@ func TestCapitalize(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		t.Run(tc.desc, func(t *testing.T) {
-			res := capitalize(tc.input)
+			res := toCapitalized(tc.input)
 			if res != tc.expected {
 				t.Errorf("got %s, want %s", res, tc.expected)
 			}
@@ -48,7 +48,7 @@ func TestCapitalizeWords(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		t.Run(tc.desc, func(t *testing.T) {
-			res := capitalizeWords(tc.input)
+			res := toCapitalizedWords(tc.input)
 			if res != tc.expected {
 				t.Errorf("got %s, want %s", res, tc.expected)
 			}
@@ -75,7 +75,7 @@ func TestDecapitalize(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		t.Run(tc.desc, func(t *testing.T) {
-			res := decapitalize(tc.input)
+			res := toDecapitalized(tc.input)
 			if res != tc.expected {
 				t.Errorf("got %s, want %s", res, tc.expected)
 			}
@@ -112,7 +112,7 @@ func TestStartCase(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		t.Run(tc.desc, func(t *testing.T) {
-			res := StartCase(tc.input)
+			res := ToStartCase(tc.input)
 			if res != tc.expected {
 				t.Errorf("got %s, want %s", res, tc.expected)
 			}
@@ -149,7 +149,7 @@ func TestPascalCase(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		t.Run(tc.desc, func(t *testing.T) {
-			res := PascalCase(tc.input)
+			res := ToPascalCase(tc.input)
 			if res != tc.expected {
 				t.Errorf("got %s, want %s", res, tc.expected)
 			}
@@ -186,7 +186,7 @@ func TestCamelCase(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		t.Run(tc.desc, func(t *testing.T) {
-			res := CamelCase(tc.input)
+			res := ToCamelCase(tc.input)
 			if res != tc.expected {
 				t.Errorf("got %s, want %s", res, tc.expected)
 			}
@@ -223,7 +223,7 @@ func TestKebabCase(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		t.Run(tc.desc, func(t *testing.T) {
-			res := KebabCase(tc.input)
+			res := ToKebabCase(tc.input)
 			if res != tc.expected {
 				t.Errorf("got %s, want %s", res, tc.expected)
 			}
@@ -260,7 +260,7 @@ func TestSnakeCase(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		t.Run(tc.desc, func(t *testing.T) {
-			res := SnakeCase(tc.input)
+			res := ToSnakeCase(tc.input)
 			if res != tc.expected {
 				t.Errorf("got %s, want %s", res, tc.expected)
 			}
@@ -297,7 +297,7 @@ func TestConstantCase(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		t.Run(tc.desc, func(t *testing.T) {
-			res := ConstantCase(tc.input)
+			res := ToConstantCase(tc.input)
 			if res != tc.expected {
 				t.Errorf("got %s, want %s", res, tc.expected)
 			}
