@@ -83,13 +83,13 @@ func addUnderscores(s string) string {
 	return replace(s, " ", "_")
 }
 
-// A StringPipeFn is any function which takes in a string and returns a string. These functions are
+// A stringPipeFn is any function which takes in a string and returns a string. These functions are
 // intended to be used in a pipleine-like fashion.
-type StringPipeFn = func(string) string
+type stringPipeFn = func(string) string
 
 // pipe composes the two passed in functions, returning a new function which calls the functions in
 // reverse order of argument order.
-func pipe(a, b StringPipeFn) StringPipeFn {
+func pipe(a, b stringPipeFn) stringPipeFn {
 	return func(s string) string {
 		return b(a(s))
 	}
@@ -97,7 +97,7 @@ func pipe(a, b StringPipeFn) StringPipeFn {
 
 // reducePipeline composes all passed in functions, returning a new function which calls the
 // functions in reverse argument order.
-func reducePipeline(fns ...StringPipeFn) StringPipeFn {
+func reducePipeline(fns ...stringPipeFn) stringPipeFn {
 	acc := func(s string) string { return s }
 	for _, fn := range fns {
 		acc = pipe(acc, fn)
