@@ -2,8 +2,6 @@
 
 `caseconv` is a library for converting strings to different cases.
 
-More specfically, this library is a Go port of [this Rust-based string conversion library](https://github.com/devkevbot/str_case_conv).
-
 ## Documentation
 
 Full documentation can be found on [pkg.go.dev](https://pkg.go.dev/github.com/devkevbot/caseconv#section-documentation).
